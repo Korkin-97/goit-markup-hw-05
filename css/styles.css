@@ -213,6 +213,37 @@ img {
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 
+/* modal window */
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(46, 47, 66, 0.4);
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.modal {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 408px;
+  height: 576px;
+
+  background-color: #fcfcfc;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
 /* sections */
 
 .section {
@@ -559,6 +590,27 @@ img {
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08);
 }
 
+.product-thumb {
+  position: relative;
+}
+
+.product-action:hover,
+.product-action:focus {
+  opacity: 1;
+}
+
+.product-action {
+  position: absolute;
+  padding: 40px 32px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+
+  background-color: var(--primary-brand);
+  opacity: 0;
+}
+
 .works-list .item:nth-child(3n) {
   margin-right: 0;
 }
@@ -574,6 +626,17 @@ img {
 .work-link .text {
   margin-left: 16px;
   margin-top: 8px;
+}
+
+.product-action .text {
+  margin-top: 0;
+  margin-left: 0;
+
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: var(--light);
 }
 
 .cont-portfolio {

@@ -56,7 +56,15 @@
         <div class="container">
           <section class="hero">
             <h1 class="hero-title">Effective Solutions for Your Business</h1>
-            <button type="button" class="btn">Order Service</button>
+            <button data-modal-open type="button" class="btn">
+              Order Service
+            </button>
+            <div data-modal class="backdrop is-hiddden">
+              <div class="modal">
+                <p></p>
+                <button data-modal-close></button>
+              </div>
+            </div>
           </section>
         </div>
       </div>
@@ -407,5 +415,8 @@
         </ul>
       </div>
     </footer>
+    <script src="./js/modal.js">
+      <link rel="stylesheet" type="text/css" href="chrome-extension://liecbddmkiiihnedobmlmillhodjkdmb/css/blur.css" class="loom-blur-styles"/>
+    </script>
   </body>
 </html>

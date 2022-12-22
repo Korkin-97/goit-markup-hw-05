@@ -7,6 +7,7 @@
   --light: #f4f4fd;
   --success: #31d0aa;
   --primary-white-color: #ffffff;
+  --alternative-hover: #404bbf;
 }
 
 body {
@@ -102,6 +103,8 @@ img {
 }
 
 .site-nav .link {
+  position: relative;
+
   display: block;
   padding-top: 24px;
   padding-bottom: 24px;
@@ -113,13 +116,21 @@ img {
   line-height: 1.5;
 }
 
-.site-nav .link:hover,
-.site-nav .link:focus {
-  color: var(--text);
+.site-nav .link.current {
+  color: var(--alternative-hover);
 }
 
-.site-nav .link.current {
-  color: var(--primary-brand);
+.current::after {
+  position: absolute;
+  display: block;
+  content: "";
+
+  width: 100%;
+  height: 4px;
+  bottom: 0;
+
+  background-color: var(--alternative-hover);
+  border-radius: 2px;
 }
 
 /* mail and tel */
@@ -140,13 +151,15 @@ img {
 .header-mail,
 .header-tel {
   color: var(--text);
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .mail-tel .header-mail:hover,
 .mail-tel .header-mail:focus,
 .mail-tel .header-tel:hover,
 .mail-tel .header-tel:focus {
-  color: var(--primary-brand);
+  color: var(--alternative-hover);
 }
 
 /* hero */
@@ -199,17 +212,19 @@ img {
   cursor: pointer;
   align-items: center;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .btn:hover,
 .btn:focus {
-  background-color: var(--primary-brand);
+  background-color: var(--alternative-hover);
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 
 .btn:active {
-  background-color: #404bbf;
+  background-color: var(--alternative-hover);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
 
@@ -428,6 +443,13 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.icon-team:hover,
+.icon-team:focus {
+  background: var(--alternative-hover);
 }
 
 /* customers */
@@ -440,11 +462,17 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
+
   width: 100%;
   height: 100%;
-  border: 1px solid var(--subtle-text);
+
   border-radius: 4px;
+  border: 1px solid var(--subtle-text);
+
   fill: var(--subtle-text);
+
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    solid 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social-list .item-customers {
@@ -454,9 +482,9 @@ img {
 
 .item-customers .icon-customers:hover,
 .item-customers .icon-customers:focus {
-  border: 1px solid var(--primary-brand);
+  border: 1px solid var(--alternative-hover);
   border-radius: 4px;
-  fill: var(--primary-brand);
+  fill: var(--alternative-hover);
 }
 
 /* wish */
@@ -518,6 +546,8 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social-list {
@@ -558,11 +588,11 @@ img {
 .button:hover,
 .button:active,
 .button:focus {
-  background-color: var(--primary-brand);
+  background-color: var(--alternative-hover);
   color: var(--primary-white-color);
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
-  border-color: var(--primary-brand);
+  border: 1px solid transparent;
 }
 
 .buttons-list {
@@ -591,6 +621,8 @@ img {
   min-width: 78px;
   height: 48px;
   border-radius: 4px;
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .buttons-list .item {
@@ -616,23 +648,29 @@ img {
 
 .product-thumb {
   position: relative;
-}
-
-.product-action:hover,
-.product-action:focus {
-  opacity: 1;
+  overflow: hidden;
 }
 
 .product-action {
   position: absolute;
   padding: 40px 32px;
+
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
 
+  transform: translateY(100%);
   background-color: var(--primary-brand);
-  opacity: 0;
+
+  transition-property: inherit;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.works-list .work-link:hover .product-action,
+.works-list .work-link:focus .product-action {
+  transform: translateY(0);
 }
 
 .works-list .item:nth-child(3n) {

@@ -56,13 +56,17 @@
         <div class="container">
           <section class="hero">
             <h1 class="hero-title">Effective Solutions for Your Business</h1>
-            <button data-modal-open type="button" class="btn">
+            <button type="button" class="btn" data-modal-open>
               Order Service
             </button>
-            <div data-modal class="backdrop is-hiddden">
+            <div class="backdrop is-hidden" data-modal>
               <div class="modal">
                 <p></p>
-                <button data-modal-close></button>
+                <button type="button" class="close-modal" data-modal-close>
+                  <svg width="8" height="8">
+                    <use href="./images/cross.svg#icon-cross"></use>
+                  </svg>
+                </button>
               </div>
             </div>
           </section>
@@ -107,7 +111,7 @@
       <!-- activity -->
       <section class="section activity-section">
         <div class="container">
-          <h2 class="section-title">What are we doing</h2>
+          <h2 class="section-title">What Are We Doing</h2>
           <ul class="activity-list list">
             <li class="item">
               <img
@@ -415,8 +419,6 @@
         </ul>
       </div>
     </footer>
-    <script src="./js/modal.js">
-      <link rel="stylesheet" type="text/css" href="chrome-extension://liecbddmkiiihnedobmlmillhodjkdmb/css/blur.css" class="loom-blur-styles"/>
-    </script>
+    <script src="./js/modal.js"></script>
   </body>
 </html>

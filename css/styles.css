@@ -201,16 +201,16 @@ img {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
 
-.btn:active {
-  background-color: #404bbf;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-}
-
 .btn:hover,
 .btn:focus {
   background-color: var(--primary-brand);
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+}
+
+.btn:active {
+  background-color: #404bbf;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
 
 /* modal window */
@@ -225,6 +225,7 @@ img {
 }
 
 .backdrop.is-hidden {
+  visibility: hidden;
   opacity: 0;
   pointer-events: none;
 }
@@ -242,6 +243,29 @@ img {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
+}
+
+.close-modal {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  top: 24px;
+  right: 24px;
+  width: 24px;
+  height: 24px;
+
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: var(--accent);
+  cursor: pointer;
+}
+
+.close-modal:hover {
+  box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08);
+  box-shadow: 0px 1px 1px 0px rgba(46, 47, 66, 0.16);
+  box-shadow: 0px 1px 6px 0px rgba(46, 47, 66, 0.08);
 }
 
 /* sections */
